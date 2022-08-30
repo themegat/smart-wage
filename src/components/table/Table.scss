@@ -57,5 +57,9 @@ table {
             display: flex;
             gap: 20px;
         }
+
+        .controls:hover{
+            cursor: pointer;
+        }
     }
 }
