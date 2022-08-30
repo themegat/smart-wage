@@ -1,6 +1,7 @@
 import { Response } from "../models/response";
 import { Submission } from "../models/submission";
 import { Survey } from "../models/survey";
+import { User } from "../models/user";
 
 const baseUri = 'https://630c9fa353a833c534304965.mockapi.io/api/v1';
 
@@ -24,6 +25,9 @@ const Api = {
                         return item;
                 });
             });
+    },
+    user(userId: number): Promise<User> {
+        return fetch(`${baseUri}/users/${userId}`).then((response) => response.json());
     }
 }
 
