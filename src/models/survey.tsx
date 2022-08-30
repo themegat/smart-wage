@@ -1,4 +1,5 @@
 export interface Survey {
+    id: number,
     name: string,
     createdBy: string,
     responses?: string

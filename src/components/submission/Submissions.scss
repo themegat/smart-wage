@@ -1,0 +1,21 @@
+.content {
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    gap: 20px;
+
+    .submissions {
+        ul {
+            list-style-type: none;
+            display: contents;
+
+            li {
+                padding: 15px 10px;
+                border-bottom: solid #DEE2E6 1px;
+            }
+
+            li:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

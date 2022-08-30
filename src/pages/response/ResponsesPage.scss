@@ -1,0 +1,10 @@
+.page {
+    h2 {
+        display: flex;
+        gap: 15px;
+
+        .back:hover {
+            cursor: pointer;
+        }
+    }
+}

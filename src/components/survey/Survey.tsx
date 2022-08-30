@@ -1,4 +1,5 @@
 import { Component, ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { Survey } from "../../models/survey";
 import Api from "../../service/Api";
 import Button from "../button/Button";
@@ -47,7 +48,10 @@ export class Surveys extends Component<{}, { isLoading: boolean, apiData: any[],
                 const statusClass = `status ${statusValue.toLocaleLowerCase()}`;
                 const status = <div className={statusClass}>{statusValue}</div>;
 
-                const action = <Button icon="chart-line" />
+                const actionLink = `/responses/${item.name}/${item.id}`;
+                const action = <Link to={actionLink}>
+                    <Button icon="chart-line" />
+                </Link>
 
                 return [item.name, item.createdBy, item.responses, launchDate, closeDate, status, action]
             })
