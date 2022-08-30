@@ -1,3 +1,4 @@
+import { Response } from "../models/response";
 import { Submission } from "../models/submission";
 import { Survey } from "../models/survey";
 
@@ -14,8 +15,15 @@ const Api = {
                 return data.filter(item => parseInt(item['surveyId']) === surveyId);
             });
     },
-    responses(): Promise<any> {
-        return fetch(`${baseUri}/responses`).then((response) => response.json());
+    responses(submissionId: number): Promise<Response[]> {
+        return fetch(`${baseUri}/responses`).then((response) => response.json())
+            .then(response => {
+                const data: [] = response;
+                return data.filter(item => {
+                    if (parseInt(item['submissionId']) == submissionId)
+                        return item;
+                });
+            });
     }
 }
 

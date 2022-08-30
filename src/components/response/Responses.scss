@@ -1,0 +1,26 @@
+.view-content {
+    position: absolute;
+    max-height: 65%;
+    min-height: 65%;
+    width: 56%;
+    overflow-x: scroll;
+    border: solid 1px #DEE2E6;
+    border-radius: 3px;
+
+    .placeholder {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    ol {
+        li {
+            background: rgba(247, 247, 248, 1);
+            margin: 2px 20px 0 0px;
+            padding: 0px 10px 5px;
+        }
+    }
+}
