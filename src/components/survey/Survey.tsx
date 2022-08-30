@@ -34,7 +34,6 @@ export class Surveys extends Component<{}, { isLoading: boolean, apiData: any[],
     componentDidMount() {
         Api.surveys().then((data: Survey[]) => {
             const apiData = data.map(item => {
-                item.responses = '134 / 500';
                 return item;
             });
 
@@ -53,7 +52,9 @@ export class Surveys extends Component<{}, { isLoading: boolean, apiData: any[],
                     <Button icon="chart-line" />
                 </Link>
 
-                return [item.name, item.createdBy, item.responses, launchDate, closeDate, status, action]
+                const responses = `${item.totalSubmissions} / ${item.totalResponses}`;
+
+                return [item.name, item.createdBy, responses, launchDate, closeDate, status, action]
             })
 
             this.setState(
