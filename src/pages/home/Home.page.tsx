@@ -9,13 +9,9 @@ export function HomePage() {
         <div className="home">
             <header className="header">
                 <img src={imgUrl} className="logo" alt="logo" />
-                <br />
                 <h3>
                     WhatsApp Survey Results Viewer
                 </h3>
-                <h1>
-                    <i>MVP</i>
-                </h1>
                 <br />
                 <Link to="/surveys">
                     <Button value="Go to Surveys" icon='chevron-right' click={test} />
