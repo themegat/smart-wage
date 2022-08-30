@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler" >
+    <symbol id="icon-chart-line" viewBox="0 0 24 24" stroke-width="" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="4" y1="19" x2="20" y2="19" />
+        <polyline points="4 15 8 9 12 11 16 6 20 10" />
+    </symbol>
+    <symbol id="icon-menu-2" viewBox="0 0 24 24" stroke-width="" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+    </symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" stroke-width="" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <polyline points="6 9 12 15 18 9" />
+    </symbol>
+    <symbol id="icon-chevron-up" viewBox="0 0 24 24" stroke-width="" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <polyline points="6 15 12 9 18 15" />
+    </symbol>
+    <symbol id="icon-chevron-left" viewBox="0 0 24 24" stroke-width="" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <polyline points="15 6 9 12 15 18" />
+    </symbol>
+    <symbol id="icon-chevron-right" viewBox="0 0 24 24" stroke-width="" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <polyline points="9 6 15 12 9 18" />
+    </symbol>
+</svg>

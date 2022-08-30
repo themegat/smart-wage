@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+
+    tbody {
+        tr {
+            td div {
+                border-radius: 32px;
+                padding: 6px 12px 5px;
+                text-align: center;
+                width: 59px;
+                height: 18px;
+                font-weight: 500;
+            }
+
+            td .status.live {
+                background: rgba(32, 201, 151, 0.3);
+            }
+
+            td .status.closed {
+                background: rgba(240, 62, 62, 0.3);
+            }
+        }
+    }
+}
