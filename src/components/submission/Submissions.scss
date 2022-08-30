@@ -4,21 +4,41 @@
     gap: 20px;
 
     .submissions {
-        ul {
-            list-style-type: none;
-            display: contents;
+        .list {
+            max-height: 80%;
+            overflow: scroll;
+            width: 100%;
 
-            li {
-                padding: 15px 10px;
-                border-bottom: solid #DEE2E6 1px;
-            }
+            ul {
+                list-style-type: none;
+                display: contents;
 
-            .selected {
-                background-color: rgba(247, 247, 248, 1);
-            }
+                li {
+                    padding: 15px 10px;
+                    border-bottom: solid #DEE2E6 1px;
+                }
 
-            li:hover {
-                cursor: pointer;
+                .selected {
+                    background-color: rgba(247, 247, 248, 1);
+                }
+
+                li:hover {
+                    cursor: pointer;
+                }
+
+                li.more {
+                    border: none;
+                    display: flex;
+                    justify-content: center;
+
+                    button.btn {
+                        font-weight: 600;
+                        gap: 10px;
+                        svg{
+                            stroke-width: 2.5;
+                        }
+                    }
+                }
             }
         }
     }
