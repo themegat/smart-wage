@@ -13,7 +13,7 @@ export function ResponsesPage() {
         <div className="page">
             <h2>
                 <Link className="back" to="/surveys">
-                    <Icon name="chevron-left" size={30} stroke={3} />
+                    <Icon name="arrow-left" size={30} stroke={3} />
                 </Link>
                 {surveyName}</h2>
             <Submissions surveyId={surveyId}></Submissions>
