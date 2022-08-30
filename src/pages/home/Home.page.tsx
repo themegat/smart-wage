@@ -1,27 +1,22 @@
-import logo from '../../logo.svg';
 import './Home.page.scss';
 import Button from '../../components/button/Button';
 
 import { Link } from 'react-router-dom';
 
 export function HomePage() {
+    const imgUrl = 'https://www.smartwage.co.za/hs-fs/hubfs/logo@2x-2048x460.png?width=2048&name=logo@2x-2048x460.png';
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-
-
+        <div className="home">
+            <header className="header">
+                <img src={imgUrl} className="logo" alt="logo" />
+                <br />
+                <h3>
+                    WhatsApp Survey Results Viewer
+                </h3>
+                <h1>
+                    <i>MVP</i>
+                </h1>
+                <br />
                 <Link to="/surveys">
                     <Button value="Go to Surveys" icon='chevron-right' click={test} />
                 </Link>
