@@ -5,24 +5,25 @@ import Responses from "../response/Responses";
 import './Submissions.scss';
 
 export default class Submissions extends Component<{ surveyId: number },
-    { isLoading: boolean, apiData: Submission[], currentSubmission: number }> {
+    { isLoading: boolean, apiData: Submission[], currentSubmission: number, submittedBy: string }> {
     constructor(props: any) {
         super(props);
         this.state = {
             isLoading: true,
             apiData: [],
-            currentSubmission: 0
+            currentSubmission: 0,
+            submittedBy: ''
         }
     }
 
     render(): ReactNode {
-        const { isLoading, apiData, currentSubmission } = this.state;
-        let responseElement = <Responses submissionId={currentSubmission} />;
+        const { isLoading, apiData, currentSubmission, submittedBy } = this.state;
         if (isLoading) {
             return (
                 <div>Loading ...</div>
             );
         } else {
+            let responseElement = <Responses submissionId={currentSubmission} submittedBy={submittedBy} />
             return (
                 <div className="content">
                     <div className="submissions">
@@ -30,10 +31,12 @@ export default class Submissions extends Component<{ surveyId: number },
                         <br></br>
                         <ul>
                             {apiData.map(item => {
+                                const classes = item.id === this.state.currentSubmission ? 'selected' : '';
                                 return (
-                                    <li onClick={() => {
+                                    <li className={classes} onClick={() => {
                                         this.setState({
-                                            currentSubmission: item.id
+                                            currentSubmission: item.id,
+                                            submittedBy: item.submittedBy
                                         })
                                     }}>{item.submittedBy}</li>
                                 )
@@ -53,9 +56,15 @@ export default class Submissions extends Component<{ surveyId: number },
         const surveyId = this.props.surveyId;
 
         Api.submissions(surveyId).then(data => {
+            const defaultItem = data.length > 0 ? data[0] : undefined;
+            const defaultId = defaultItem ? defaultItem.id : 0;
+            const defaultSubmit = defaultItem ? defaultItem.submittedBy : '';
+
             this.setState({
                 apiData: data,
-                isLoading: false
+                isLoading: false,
+                currentSubmission: defaultId,
+                submittedBy: defaultSubmit
             })
         })
     }

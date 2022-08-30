@@ -3,7 +3,7 @@ import { Response } from "../../models/response";
 import Api from "../../service/Api";
 import './Responses.scss';
 
-export default class Responses extends Component<{ submissionId: number },
+export default class Responses extends Component<{ submissionId: number, submittedBy: string },
     { isLoading: boolean, apiData: Response[], submissionId: number }> {
     constructor(props: any) {
         super(props);
@@ -16,12 +16,19 @@ export default class Responses extends Component<{ submissionId: number },
 
     render(): ReactNode {
         const newSubmissionId = this.props.submissionId;
+        const submittedBy = this.props.submittedBy;
+
         const { isLoading, apiData, submissionId } = this.state;
         if (isLoading || (submissionId !== newSubmissionId)) {
             return (<div className="view-content">
                 <div className="placeholder">Loading ...</div>
             </div>)
-        } else if (!isLoading && apiData.length === 0) {
+        } else if (!isLoading && apiData.length === 0 && submissionId > 0) {
+            return (<div className="view-content">
+                <div className="placeholder">No responses from <strong>
+                    {submittedBy}</strong></div>
+            </div>)
+        } else if (!isLoading && apiData.length === 0 && submissionId === 0) {
             return (<div className="view-content">
                 <div className="placeholder">Select a submission</div>
             </div>)
@@ -57,6 +64,7 @@ export default class Responses extends Component<{ submissionId: number },
             isLoading: true
         });
         const submissionId = this.props.submissionId;
+
         Api.responses(submissionId).then(data => {
             this.setState({
                 apiData: data,
@@ -67,13 +75,15 @@ export default class Responses extends Component<{ submissionId: number },
     }
 
     componentDidUpdate() {
-        const submissionId = this.props.submissionId;
-        Api.responses(submissionId).then(data => {
-            this.setState({
-                apiData: data,
-                isLoading: false,
-                submissionId
+        if (this.state.submissionId !== this.props.submissionId) {
+            const submissionId = this.props.submissionId;
+            Api.responses(submissionId).then(data => {
+                this.setState({
+                    apiData: data,
+                    isLoading: false,
+                    submissionId
+                });
             });
-        });
+        }
     }
 }

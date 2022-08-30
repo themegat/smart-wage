@@ -50,21 +50,23 @@ class Table extends Component<{ headers: string[], data?: string[][] },
 
         return (
             <div className="table-view">
-                <table>
-                    <thead>
-                        <tr>
-                            {headers.map(value => <td>{value}</td>)}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            data.map(item => <tr>
-                                {item.map((value: string) => <td>{value}</td>)}
-                            </tr>)
-                        }
+                <div className="table-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                {headers.map(value => <td>{value}</td>)}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                data.map(item => <tr>
+                                    {item.map((value: string) => <td>{value}</td>)}
+                                </tr>)
+                            }
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
 
                 <div className="footer">
                     <div className="pagination">
